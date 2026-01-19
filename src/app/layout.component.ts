@@ -26,15 +26,17 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     `,
     styles: [`
         .layout-container {
-            min-height: 100vh;
-            background: white;
+            height: 100vh;
+            background: #eeeeee;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         .header-wrapper {
             background: #10b981;
             padding: 0;
+            flex-shrink: 0;
         }
 
         .main-content {
@@ -42,15 +44,17 @@ import { ConfirmationService, MessageService } from 'primeng/api';
             padding: 0.5rem;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         .content-wrapper {
             background: white;
-            border: 1px solid #00000027;
+            border: 1px solid #00000049;
             border-radius: 6px;
             padding: 1rem;
             flex: 1;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
         }
     `],
     standalone: true,
