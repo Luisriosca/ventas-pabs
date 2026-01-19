@@ -23,6 +23,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/plan-semanal.component').then(m => m.PlanSemanalComponent)
       },
       {
+        path: 'cortes',
+        loadComponent: () => import('./pages/cortes.component').then(m => m.CortesComponent)
+      },
+      {
         path: 'kpi-vendedor',
         loadComponent: () => import('./pages/kpi-vendedor.component').then(m => m.KpiVendedorComponent)
       }

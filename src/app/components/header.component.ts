@@ -28,6 +28,7 @@ import { ButtonModule } from 'primeng/button';
               [routerLink]="item.routerLink || null" 
               routerLinkActive="active"
               [routerLinkActiveOptions]="{exact: true}"
+              [class.active-parent]="isParentActive(item)"
               class="nav-item">
               <i [class]="item.icon"></i>
               <span>{{ item.label }}</span>
@@ -162,7 +163,7 @@ import { ButtonModule } from 'primeng/button';
       border-radius: 6px;
     }
 
-    .nav-item.active {
+    .nav-item.active,.nav-item.active-parent  {
       color: white;
       background: #10b981;
       border-radius: 6px;
@@ -271,6 +272,13 @@ export class HeaderComponent implements OnInit {
         this.router.navigate(['/login']);
     }
 
+    isParentActive(item: any): boolean {
+        if (item.items && item.items.length > 0) {
+            return item.items.some((subitem: any) => this.router.url.includes(subitem.routerLink));
+        }
+        return false;
+    }
+
     initializeMenuItems() {
         this.menuItems = [
             {
@@ -279,9 +287,20 @@ export class HeaderComponent implements OnInit {
                 routerLink: '/home'
             },
             {
-                label: 'Plan Semanal',
-                icon: 'pi pi-fw pi-calendar',
-                routerLink: '/plan-semanal'
+                label: 'Prospección',
+                icon: 'pi pi-fw pi-search',
+                items: [
+                    {
+                        label: 'Plan Semanal',
+                        icon: 'pi pi-fw pi-calendar',
+                        routerLink: '/plan-semanal'
+                    },
+                    {
+                        label: 'Cortes',
+                        icon: 'pi pi-fw pi-file',
+                        routerLink: '/cortes'
+                    }
+                ]
             },
             {
                 label: 'KPI Vendedor',
