@@ -3,13 +3,18 @@ import { CommonModule } from '@angular/common';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
+import { WeekSelectorBarComponent } from '../components/utils/week-selector.component';
 
 @Component({
   selector: 'app-plan-semanal',
   standalone: true,
-  imports: [CommonModule, InputTextModule, TableModule, TagModule],
+  imports: [CommonModule, InputTextModule, TableModule, TagModule, WeekSelectorBarComponent],
   template: `
     <div class="plan-semanal-container">
+      <div class="flex justify-content-between align-items-center mb-3">
+        <h1 class="m-0 text-2xl font-bold">Plan Semanal</h1>
+        <app-week-selector-bar (weekChange)="onWeekChange($event)"></app-week-selector-bar>
+      </div>
       <div class="info-query-section">
         <div class="query-grid">
           <div class="query-field">
@@ -216,6 +221,10 @@ import { TagModule } from 'primeng/tag';
 })
 export class PlanSemanalComponent {
   tableData = this.generateTableData();
+
+  onWeekChange(range: { start: Date, end: Date }) {
+    console.log('semana actual:', range.start, 'a', range.end);
+  }
 
   generateTableData() {
     const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
