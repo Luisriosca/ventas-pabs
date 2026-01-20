@@ -13,19 +13,27 @@ import { TagModule } from 'primeng/tag';
       <div class="info-query-section">
         <div class="query-grid">
           <div class="query-field">
-            <label for="nombreVendedor">Nombre vendedor</label>
+            <label for="nombreVendedor">
+              <i class="pi pi-user text-primary"></i>Nombre vendedor
+            </label>
             <input pInputText id="nombreVendedor" type="text" class="w-full" />
           </div>
           <div class="query-field">
-            <label for="usuarioKnockio">Usuario Knockio</label>
+            <label for="usuarioKnockio">
+              <i class="pi pi-id-card text-primary"></i>Usuario Knockio
+            </label>
             <input pInputText id="usuarioKnockio" type="text" class="w-full" />
           </div>
           <div class="query-field">
-            <label for="observaciones">Observaciones color asistente social</label>
+            <label for="observaciones">
+              <i class="pi pi-comment text-primary"></i>Observaciones color asistente social
+            </label>
             <input pInputText id="observaciones" type="text" class="w-full" />
           </div>
           <div class="query-field">
-            <label for="totalHoras">Total de horas invertidas hombro con hombro</label>
+            <label for="totalHoras">
+              <i class="pi pi-clock text-primary"></i>Total de horas invertidas hombro con hombro
+            </label>
             <input pInputText id="totalHoras" type="text" class="w-full" />
           </div>
         </div>
@@ -117,13 +125,17 @@ import { TagModule } from 'primeng/tag';
     .query-field {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.75rem;
     }
 
     .query-field label {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
       font-weight: 600;
       font-size: 0.85rem;
       color: var(--text-color);
+      margin-bottom: 0.25rem;
     }
 
     .table-container {
