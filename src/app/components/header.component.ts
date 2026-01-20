@@ -307,6 +307,11 @@ export class HeaderComponent implements OnInit {
                 icon: 'pi pi-fw pi-chart-bar',
                 routerLink: '/kpi-vendedor'
             },
+            {
+                label: 'Usuarios',
+                icon: 'pi pi-fw pi-users',
+                routerLink: '/usuarios'
+            },
         ];
     }
 }

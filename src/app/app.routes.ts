@@ -28,8 +28,10 @@ export const routes: Routes = [
       },
       {
         path: 'kpi-vendedor',
-        loadComponent: () => import('./pages/kpi-vendedor.component').then(m => m.KpiVendedorComponent)
-      }
+        loadComponent: () => import('./pages/kpi-vendedor.component').then(m => m.KpiVendedorComponent)      },
+      {
+        path: 'usuarios',
+        loadComponent: () => import('./pages/usuarios.component').then(m => m.UsuariosComponent)      }
     ]
   }
 ];
