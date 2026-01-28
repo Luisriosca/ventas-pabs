@@ -6,7 +6,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/login.component').then(m => m.LoginComponent)
   },
   {
-    path: '',
+    path: 'app',
     loadComponent: () => import('./layout.component').then(m => m.LayoutComponent),
     children: [
       {
@@ -28,10 +28,17 @@ export const routes: Routes = [
       },
       {
         path: 'kpi-vendedor',
-        loadComponent: () => import('./pages/kpi-vendedor.component').then(m => m.KpiVendedorComponent)      },
+        loadComponent: () => import('./pages/kpi-vendedor.component').then(m => m.KpiVendedorComponent)
+      },
       {
         path: 'usuarios',
-        loadComponent: () => import('./pages/usuarios.component').then(m => m.UsuariosComponent)      }
+        loadComponent: () => import('./pages/usuarios.component').then(m => m.UsuariosComponent)
+      }
     ]
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
   }
 ];

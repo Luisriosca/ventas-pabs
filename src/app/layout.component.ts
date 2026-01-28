@@ -27,7 +27,9 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     styles: [`
         .layout-container {
             height: 100vh;
-            background: #eeeeee;
+            background-color: #eeeeee;
+            background-image: radial-gradient(#d4d4d4 2px, transparent 2px);
+            background-size: 24px 24px;
             display: flex;
             flex-direction: column;
             overflow: hidden;

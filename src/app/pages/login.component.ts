@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   standalone: true,
   imports: [
-    CommonModule, 
+    CommonModule,
     ReactiveFormsModule,
     ButtonModule,
     InputTextModule
@@ -63,6 +63,7 @@ import { Router } from '@angular/router';
             type="submit"
             [disabled]="loginForm.invalid"
             class="btn-signin"
+            (click)="onSubmit()"
           >
             <i class="pi pi-sign-in"></i>
             <span>Iniciar Sesión</span>
@@ -217,7 +218,7 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   isFieldInvalid(fieldName: string): boolean {
     const field = this.loginForm.get(fieldName);
@@ -227,7 +228,7 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       console.log('login:', this.loginForm.value);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/app']);
     }
   }
 }
